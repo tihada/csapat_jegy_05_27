@@ -27,18 +27,18 @@
             this.beolvasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nevekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gyümölcsökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.favoritokKiírásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.names_listBox = new System.Windows.Forms.ListBox();
             this.fruits_listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.names_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.fruits_textBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.favoritokKiírásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.favourits_listBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
@@ -69,16 +69,22 @@
             // nevekToolStripMenuItem
             // 
             this.nevekToolStripMenuItem.Name = "nevekToolStripMenuItem";
-            this.nevekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nevekToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.nevekToolStripMenuItem.Text = "Nevek";
             this.nevekToolStripMenuItem.Click += new System.EventHandler(this.beolvasHandler);
             // 
             // gyümölcsökToolStripMenuItem
             // 
             this.gyümölcsökToolStripMenuItem.Name = "gyümölcsökToolStripMenuItem";
-            this.gyümölcsökToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gyümölcsökToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.gyümölcsökToolStripMenuItem.Text = "Gyümölcsök";
             this.gyümölcsökToolStripMenuItem.Click += new System.EventHandler(this.beolvasHandler);
+            // 
+            // favoritokKiírásaToolStripMenuItem
+            // 
+            this.favoritokKiírásaToolStripMenuItem.Name = "favoritokKiírásaToolStripMenuItem";
+            this.favoritokKiírásaToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.favoritokKiírásaToolStripMenuItem.Text = "Favoritok kiírása";
             // 
             // aboutToolStripMenuItem
             // 
@@ -130,12 +136,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Gyümölcsök";
             // 
-            // textBox1
+            // names_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 384);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.names_textBox.Location = new System.Drawing.Point(16, 384);
+            this.names_textBox.Name = "names_textBox";
+            this.names_textBox.Size = new System.Drawing.Size(100, 20);
+            this.names_textBox.TabIndex = 5;
+            this.names_textBox.TextChanged += new System.EventHandler(this.names_textBox_TextChanged);
             // 
             // label3
             // 
@@ -155,12 +162,13 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Szűrés";
             // 
-            // textBox2
+            // fruits_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(337, 384);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.fruits_textBox.Location = new System.Drawing.Point(337, 384);
+            this.fruits_textBox.Name = "fruits_textBox";
+            this.fruits_textBox.Size = new System.Drawing.Size(100, 20);
+            this.fruits_textBox.TabIndex = 8;
+            this.fruits_textBox.TextChanged += new System.EventHandler(this.fruits_textBox_TextChanged);
             // 
             // button1
             // 
@@ -170,12 +178,6 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Felvisz";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // favoritokKiírásaToolStripMenuItem
-            // 
-            this.favoritokKiírásaToolStripMenuItem.Name = "favoritokKiírásaToolStripMenuItem";
-            this.favoritokKiírásaToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.favoritokKiírásaToolStripMenuItem.Text = "Favoritok kiírása";
             // 
             // label5
             // 
@@ -204,9 +206,9 @@
             this.Controls.Add(this.favourits_listBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.fruits_textBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.names_textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fruits_listBox);
@@ -235,10 +237,10 @@
         private System.Windows.Forms.ListBox fruits_listBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox names_textBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox fruits_textBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox favourits_listBox;

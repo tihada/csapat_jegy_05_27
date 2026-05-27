@@ -16,6 +16,7 @@ namespace csapat_jegy_05_27 {
             InitializeComponent();
         }
 
+        public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
         List<string> nevek = new List<string>();
         List<string> gyumolcsok = new List<string>();
 
@@ -85,6 +86,14 @@ namespace csapat_jegy_05_27 {
         private void updateListbox(ListBox lb, List<string> cont) {
             lb.Items.Clear();
             lb.Items.AddRange(cont.ToArray());
+        }
+
+        private void fruits_textBox_TextChanged(object sender, EventArgs e) {
+            OnFilterTxtBoxChange(sender, fruits);
+        }
+
+        private void names_textBox_TextChanged(object sender, EventArgs e) {
+            OnFilterTxtBoxChange(sender, names);
         }
     }
 }
