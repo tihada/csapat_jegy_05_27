@@ -16,11 +16,10 @@ namespace csapat_jegy_05_27 {
             InitializeComponent();
         }
 
-        public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
         List<string> nevek = new List<string>();
         List<string> gyumolcsok = new List<string>();
 
-        public void onFilterTxtBoxChange(object sender, EventArgs e) {
+        public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 
@@ -96,11 +95,11 @@ namespace csapat_jegy_05_27 {
         }
 
         private void fruits_textBox_TextChanged(object sender, EventArgs e) {
-            OnFilterTxtBoxChange(sender, fruits);
+            OnFilterTxtBoxChange(sender, gyumolcsok);
         }
 
         private void names_textBox_TextChanged(object sender, EventArgs e) {
-            OnFilterTxtBoxChange(sender, names);
+            OnFilterTxtBoxChange(sender, nevek);
         }
     }
 }
