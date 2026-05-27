@@ -98,7 +98,7 @@ namespace csapat_jegy_05_27 {
         }
 
         private void add_button_Click(object sender, EventArgs e) {
-            if (names_listBox.SelectedItem != null && fruits_listBox.SelectedItem != null) {
+            if (names_listBox.SelectedIndex != -1 && fruits_listBox.SelectedIndex != -1) {
                 string selectedName = names_listBox.SelectedItem.ToString();
                 string selectedFruit = fruits_listBox.SelectedItem.ToString();
 
@@ -122,7 +122,7 @@ namespace csapat_jegy_05_27 {
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e) {
-            if (names_listBox.SelectedItem != null && fruits_listBox.SelectedItem != null) {
+            if (names_listBox.SelectedIndex != -1 && fruits_listBox.SelectedIndex != -1) {
                 add_button.Enabled = true;
             }
             else {
