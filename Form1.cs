@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,6 +17,10 @@ namespace csapat_jegy_05_27 {
         }
 
         public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
+        List<string> nevek = new List<string>();
+        List<string> gyumolcsok = new List<string>();
+
+        public void onFilterTxtBoxChange(object sender, EventArgs e) {
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 
@@ -58,7 +63,36 @@ namespace csapat_jegy_05_27 {
         }
 
         private void beolvasHandler(object sender, EventArgs e) {
+            if ((sender as ToolStripMenuItem).Text == "Nevek") {
+                nevek = beolvasas();
+                updateListbox(names_listBox, nevek);
+            } else  {
+                gyumolcsok = beolvasas();
+                updateListbox(fruits_listBox, gyumolcsok);
+            }
 
+        }
+
+        private List<string> beolvasas() {
+            List<string> cont = new List<string>();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Fájl beolvasása";
+            ofd.Filter = "Szöveges fájl|*.txt|Minden fájl|*.*";
+            ofd.ShowDialog();
+            string[] lines;
+            try {
+                lines = File.ReadAllLines(ofd.FileName);
+            } catch {
+                MessageBox.Show("Hiba a fájl beolvasásakor!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return cont;
+            }
+            cont.AddRange(lines);
+            return cont;
+        }
+
+        private void updateListbox(ListBox lb, List<string> cont) {
+            lb.Items.Clear();
+            lb.Items.AddRange(cont.ToArray());
         }
 
         private void fruits_textBox_TextChanged(object sender, EventArgs e) {
