@@ -113,8 +113,12 @@ namespace csapat_jegy_05_27 {
             foreach (var item in favourits_listBox.Items) {
                 lines.Add(item.ToString());
             }
-            File.WriteAllLines("favoritok.txt", lines.ToArray());
-            MessageBox.Show("Kedvencek kiírva a 'favoritok.txt' fájlba!", "Sikeres kiírás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(lines.Count > 0) {
+                File.WriteAllLines("favoritok.txt", lines.ToArray());
+                MessageBox.Show("Kedvencek kiírva a 'favoritok.txt' fájlba!", "Sikeres kiírás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show("Kedvencek kiírása sikertelen!\nA lista üres.", "Sikertelen kiírás", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e) {
