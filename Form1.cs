@@ -20,6 +20,8 @@ namespace csapat_jegy_05_27 {
         List<string> gyumolcsok = new List<string>();
 
         public void OnFilterTxtBoxChange(object sender, EventArgs e) {
+            listBox_SelectedIndexChanged(sender, e);
+
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 

@@ -108,6 +108,7 @@
             this.names_listBox.Name = "names_listBox";
             this.names_listBox.Size = new System.Drawing.Size(260, 264);
             this.names_listBox.TabIndex = 1;
+            this.names_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // fruits_listBox
             // 
@@ -116,6 +117,7 @@
             this.fruits_listBox.Name = "fruits_listBox";
             this.fruits_listBox.Size = new System.Drawing.Size(260, 264);
             this.fruits_listBox.TabIndex = 2;
+            this.fruits_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // label1
             // 
