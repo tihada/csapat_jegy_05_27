@@ -23,7 +23,6 @@ namespace csapat_jegy_05_27 {
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 
-
             string lbName = $"{filterTxtBox.Name.Replace("_textBox", "")}_listBox";
             ListBox lb = (GetListBoxByName(lbName) as ListBox);
 
@@ -100,6 +99,17 @@ namespace csapat_jegy_05_27 {
 
         private void names_textBox_TextChanged(object sender, EventArgs e) {
             OnFilterTxtBoxChange(sender, nevek);
+        }
+
+        private void add_button_Click(object sender, EventArgs e) {
+            if (names_listBox.SelectedItem != null && fruits_listBox.SelectedItem != null) {
+                string selectedName = names_listBox.SelectedItem.ToString();
+                string selectedFruit = fruits_listBox.SelectedItem.ToString();
+
+                string entry = $"{selectedName} - {selectedFruit}";
+                favourits_listBox.Items.Add(entry);
+                names_listBox.Items.RemoveAt(names_listBox.SelectedIndex);
+            }
         }
     }
 }
