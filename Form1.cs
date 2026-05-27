@@ -111,5 +111,14 @@ namespace csapat_jegy_05_27 {
                 names_listBox.Items.RemoveAt(names_listBox.SelectedIndex);
             }
         }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e) {
+            if (names_listBox.SelectedItem != null && fruits_listBox.SelectedItem != null) {
+                add_button.Enabled = true;
+            }
+            else {
+                add_button.Enabled = false;
+            }
+        }
     }
 }

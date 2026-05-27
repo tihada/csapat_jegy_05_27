@@ -172,6 +172,7 @@
             // 
             // add_button
             // 
+            this.add_button.Enabled = false;
             this.add_button.Location = new System.Drawing.Point(651, 381);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(75, 23);
