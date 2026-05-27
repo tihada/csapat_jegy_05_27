@@ -106,6 +106,7 @@ namespace csapat_jegy_05_27 {
 
                 string entry = $"{selectedName} - {selectedFruit}";
                 favourits_listBox.Items.Add(entry);
+                nevek.Remove(selectedName);
                 names_listBox.Items.RemoveAt(names_listBox.SelectedIndex);
             }
         }
