@@ -22,12 +22,19 @@ namespace csapat_jegy_05_27 {
 
             string lbName = $"{filterTxtBox.Name.Replace("_textBox", "")}_listBox";
             ListBox lb = (GetListBoxByName(lbName) as ListBox);
-        
+
             lb.Items.Clear();
 
-            foreach (var item in lb.Items) {
-                if (Regex.IsMatch(item.ToString(), filter)) {
+            if (filter == "") {
+                foreach (var item in tofilter) {
                     lb.Items.Add(item);
+                }
+            }
+            else {
+                foreach (var item in tofilter) {
+                    if (Regex.IsMatch(item.ToString(), filter)) {
+                        lb.Items.Add(item);
+                    }
                 }
             }
         }
