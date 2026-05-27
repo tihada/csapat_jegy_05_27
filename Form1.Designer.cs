@@ -143,7 +143,7 @@
             this.names_textBox.Name = "names_textBox";
             this.names_textBox.Size = new System.Drawing.Size(100, 20);
             this.names_textBox.TabIndex = 5;
-            this.names_textBox.TextChanged += new System.EventHandler(this.names_textBox_TextChanged);
+            this.names_textBox.TextChanged += new System.EventHandler(this.OnFilterTxtBoxChange);
             // 
             // label3
             // 
@@ -169,7 +169,7 @@
             this.fruits_textBox.Name = "fruits_textBox";
             this.fruits_textBox.Size = new System.Drawing.Size(100, 20);
             this.fruits_textBox.TabIndex = 8;
-            this.fruits_textBox.TextChanged += new System.EventHandler(this.fruits_textBox_TextChanged);
+            this.fruits_textBox.TextChanged += new System.EventHandler(this.OnFilterTxtBoxChange);
             // 
             // add_button
             // 

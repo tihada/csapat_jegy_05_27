@@ -19,14 +19,18 @@ namespace csapat_jegy_05_27 {
         List<string> nevek = new List<string>();
         List<string> gyumolcsok = new List<string>();
 
-        public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
+        public void OnFilterTxtBoxChange(object sender, EventArgs e) {
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 
-            string lbName = $"{filterTxtBox.Name.Replace("_textBox", "")}_listBox";
+            string filterOpt = filterTxtBox.Name.Replace("_textBox", "");
+
+            string lbName = $"{filterOpt}_listBox";
             ListBox lb = (GetListBoxByName(lbName) as ListBox);
 
             lb.Items.Clear();
+
+            List<string> tofilter = filterOpt == "names" ? nevek : gyumolcsok;
 
             if (filter == "") {
                 foreach (var item in tofilter) {
@@ -35,7 +39,7 @@ namespace csapat_jegy_05_27 {
             }
             else {
                 foreach (var item in tofilter) {
-                    if (Regex.IsMatch(item.ToString(), filter)) {
+                    if (Regex.IsMatch(item.ToString(), filter, RegexOptions.IgnoreCase)) {
                         lb.Items.Add(item);
                     }
                 }
@@ -91,14 +95,6 @@ namespace csapat_jegy_05_27 {
         private void updateListbox(ListBox lb, List<string> cont) {
             lb.Items.Clear();
             lb.Items.AddRange(cont.ToArray());
-        }
-
-        private void fruits_textBox_TextChanged(object sender, EventArgs e) {
-            OnFilterTxtBoxChange(sender, gyumolcsok);
-        }
-
-        private void names_textBox_TextChanged(object sender, EventArgs e) {
-            OnFilterTxtBoxChange(sender, nevek);
         }
 
         private void add_button_Click(object sender, EventArgs e) {
