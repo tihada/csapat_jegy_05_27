@@ -85,6 +85,7 @@
             this.favoritokKiírásaToolStripMenuItem.Name = "favoritokKiírásaToolStripMenuItem";
             this.favoritokKiírásaToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.favoritokKiírásaToolStripMenuItem.Text = "Favoritok kiírása";
+            this.favoritokKiírásaToolStripMenuItem.Click += new System.EventHandler(this.favoritokKiírásaToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 

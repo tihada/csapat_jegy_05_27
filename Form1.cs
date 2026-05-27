@@ -112,6 +112,15 @@ namespace csapat_jegy_05_27 {
             }
         }
 
+        private void favoritokKiírásaToolStripMenuItem_Click(object sender, EventArgs e) {
+            List<string> lines = new List<string>();
+            foreach (var item in favourits_listBox.Items) {
+                lines.Add(item.ToString());
+            }
+            File.WriteAllLines("favoritok.txt", lines.ToArray());
+            MessageBox.Show("Kedvencek kiírva a 'favoritok.txt' fájlba!", "Sikeres kiírás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void listBox_SelectedIndexChanged(object sender, EventArgs e) {
             if (names_listBox.SelectedItem != null && fruits_listBox.SelectedItem != null) {
                 add_button.Enabled = true;
