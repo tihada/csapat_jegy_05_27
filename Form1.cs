@@ -15,7 +15,7 @@ namespace csapat_jegy_05_27 {
             InitializeComponent();
         }
 
-        public void onFilterTxtBoxChange(object sender, EventArgs e) {
+        public void OnFilterTxtBoxChange(object sender, List<string> tofilter) {
             var filterTxtBox = sender as TextBox;
             string filter = filterTxtBox.Text;
 
@@ -52,6 +52,14 @@ namespace csapat_jegy_05_27 {
 
         private void beolvasHandler(object sender, EventArgs e) {
 
+        }
+
+        private void fruits_textBox_TextChanged(object sender, EventArgs e) {
+            OnFilterTxtBoxChange(sender, fruits);
+        }
+
+        private void names_textBox_TextChanged(object sender, EventArgs e) {
+            OnFilterTxtBoxChange(sender, names);
         }
     }
 }
