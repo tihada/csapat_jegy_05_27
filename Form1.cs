@@ -101,5 +101,14 @@ namespace csapat_jegy_05_27 {
         private void names_textBox_TextChanged(object sender, EventArgs e) {
             OnFilterTxtBoxChange(sender, nevek);
         }
+
+        private void favoritokKiírásaToolStripMenuItem_Click(object sender, EventArgs e) {
+            List<string> lines = new List<string>();
+            foreach (var item in favourits_listBox.Items) {
+                lines.Add(item.ToString());
+            }
+            File.WriteAllLines("favoritok.txt", lines.ToArray());
+            MessageBox.Show("Kedvencek kiírva a 'favoritok.txt' fájlba!", "Sikeres kiírás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
