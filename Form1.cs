@@ -57,8 +57,10 @@ namespace csapat_jegy_05_27 {
         private void beolvasHandler(object sender, EventArgs e) {
             if ((sender as ToolStripMenuItem).Text == "Nevek") {
                 nevek = beolvasas();
+                updateListbox(names_listBox, nevek);
             } else  {
                 gyumolcsok = beolvasas();
+                updateListbox(fruits_listBox, gyumolcsok);
             }
 
         }
