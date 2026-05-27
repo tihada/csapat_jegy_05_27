@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.fruits_textBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.add_button = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.favourits_listBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
@@ -171,14 +171,15 @@
             this.fruits_textBox.TabIndex = 8;
             this.fruits_textBox.TextChanged += new System.EventHandler(this.fruits_textBox_TextChanged);
             // 
-            // button1
+            // add_button
             // 
-            this.button1.Location = new System.Drawing.Point(651, 381);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Felvisz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.add_button.Location = new System.Drawing.Point(651, 381);
+            this.add_button.Name = "add_button";
+            this.add_button.Size = new System.Drawing.Size(75, 23);
+            this.add_button.TabIndex = 10;
+            this.add_button.Text = "Felvisz";
+            this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // label5
             // 
@@ -205,7 +206,7 @@
             this.ClientSize = new System.Drawing.Size(923, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.favourits_listBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.add_button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.fruits_textBox);
             this.Controls.Add(this.label3);
@@ -242,7 +243,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox fruits_textBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox favourits_listBox;
     }
