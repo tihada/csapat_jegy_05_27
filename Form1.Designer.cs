@@ -71,12 +71,14 @@
             this.nevekToolStripMenuItem.Name = "nevekToolStripMenuItem";
             this.nevekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nevekToolStripMenuItem.Text = "Nevek";
+            this.nevekToolStripMenuItem.Click += new System.EventHandler(this.beolvasHandler);
             // 
             // gyümölcsökToolStripMenuItem
             // 
             this.gyümölcsökToolStripMenuItem.Name = "gyümölcsökToolStripMenuItem";
             this.gyümölcsökToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gyümölcsökToolStripMenuItem.Text = "Gyümölcsök";
+            this.gyümölcsökToolStripMenuItem.Click += new System.EventHandler(this.beolvasHandler);
             // 
             // aboutToolStripMenuItem
             // 

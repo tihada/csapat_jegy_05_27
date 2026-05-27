@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ namespace csapat_jegy_05_27 {
         public Form1() {
             InitializeComponent();
         }
+
+        List<string> nevek = new List<string>();
+        List<string> gyumolcsok = new List<string>();
 
         private void kilépToolStripMenuItem_Click(object sender, EventArgs e) {
             if (MessageBox.Show("Biztosan kilép?", "Kilépés", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
@@ -25,7 +29,34 @@ namespace csapat_jegy_05_27 {
         }
 
         private void beolvasHandler(object sender, EventArgs e) {
+            if ((sender as ToolStripMenuItem).Text == "Nevek") {
+                nevek = beolvasas();
+            } else  {
+                gyumolcsok = beolvasas();
+            }
 
+        }
+
+        private List<string> beolvasas() {
+            List<string> cont = new List<string>();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Fájl beolvasása";
+            ofd.Filter = "Szöveges fájl|*.txt|Minden fájl|*.*";
+            ofd.ShowDialog();
+            string[] lines;
+            try {
+                lines = File.ReadAllLines(ofd.FileName);
+            } catch {
+                MessageBox.Show("Hiba a fájl beolvasásakor!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return cont;
+            }
+            cont.AddRange(lines);
+            return cont;
+        }
+
+        private void updateListbox(ListBox lb, List<string> cont) {
+            lb.Items.Clear();
+            lb.Items.AddRange(cont.ToArray());
         }
     }
 }
